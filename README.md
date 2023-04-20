@@ -26,6 +26,7 @@ $ node app.js
 - Anything else you'd be proud to show your parents
 
 ## :scream: Bugs to fix :poop:
+- switch players then do the same thing for next player until there's a winner
 - Anything a little broken
 - Anything a LOT broken
 - Buttons to not click too many times (cause its broken :sob:)
