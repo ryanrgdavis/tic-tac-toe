@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Tic-Tac-Toe</h1>
+    <table>
+      <tr>
+        <td id="box-0"></td>
+        <td id="box-1"></td>
+        <td id="box-2"></td>
+      </tr>
+      <tr>
+        <td id="box-3"></td>
+        <td id="box-4"></td>
+        <td id="box-5"></td>
+      </tr>
+      <tr>
+        <td id="box-6"></td>
+        <td id="box-7"></td>
+        <td id="box-8"></td>
+      </tr>
+    </table>
+    <div id="winner"></div>
+    <script>
+        // create variables
+        var currentPlayer = 'X';
+        var boxes = document.querySelectorAll('td');
+        var gameEnded = false;
+
+        // add event listeners to boxes
+        for (var i = 0; i < boxes.length; i++) {
+            boxes[i].addEventListener('click', function() {
+                if (boxes[i].innerHTML === '' && !gameEnded) {
+                    boxes[i].innerHTML = currentPlayer;
+                    if (checkForWinner()) {
+                        message.innerHTML = 'Player' + currentPlayer + ' wins!';
+                        gameEnded = true;
+                    } else if (checkForDraw()) {
+                        message.innerHTML = 'Draw!';
+                        gameEnded = true;
+                    } else {
+                        // Switch players
+                        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+                        message.innerHTML = 'Player ' + currentPlayer + '\'s turn';
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

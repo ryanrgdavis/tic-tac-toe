@@ -1,0 +1,17 @@
+td {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+#winner {
+    
+}
