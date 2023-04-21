@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Tic-Tac-Toe</h1>
+    <h1>Tic-Tac-Toe Game</h1>
     <table>
       <tr>
         <td id="box-0"></td>
@@ -28,47 +28,52 @@
     </table>
     <div id="winner"></div>
     <script>
-        // create variables
+        // Create variables
         var currentPlayer = 'X';
         var boxes = document.querySelectorAll('td');
         var gameEnded = false;
 
-        // add event listeners to boxes
-        for (var i = 0; i < boxes.length; i++) {
-            boxes[i].addEventListener('click', function() {
-            // Check if box is empty and game is not over
-            if (boxes[i].firstChild === null && !gameEnded) {
-              // Set box to current player
-              var box = document.createElement('td');
-              var boxText = document.createTextNode(currentPlayer);
-              box.appendChild(boxText);
-              boxes[i].parentNode.replaceChild(boxes, boxes[i]);
-              // Check for winner
-                if (checkForWinner()) {
-                  var messageText = document.createTextNode('Player ' + currentPlayer + ' wins!');
-                  while (message.firstChild) {
-                    message.removeChild(message.firstChild);
-                  }
-                  message.appendChild(messageText);
-                  gameEnded = true;
-                } else if (checkForDraw()) {
-                  var messageText = document.createTextNode('Draw!');
-                  while (message.firstChild) {
-                    message.removeChild(message.firstChild);
-                  }
-                  message.appendChild(messageText);
-                  gameEnded = true;
-                } else {
-                    // Switch players
-                  currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-                  var messageText = document.createTextNode('Player ' + currentPlayer + '\'s turn');
-                  while (message.firstChild) {
-                    message.removeChild(message.firstChild);
-                  }
-                  message.appendChild(messageText);
-                }
-                }
-            });
+        // Add event listener to boxes
+        boxes.addEventListener('click', function(event) {
+          var clickedBox = event.target;
+          // Check if box is empty and game is not over
+          if (clickedBox.firstChild === null && !gameEnded) {
+            // Set box to current player
+            var box = document.createElement('td');
+            var boxText = document.createTextNode(currentPlayer);
+            box.appendChild(boxText);
+            clickedBox.parentNode.replaceChild(boxes, clickedBox);
+            // Check for winner
+            if (checkForWinner()) {
+              alert('Player ' + currentPlayer + ' wins!');
+              gameEnded = true;
+            } else if (checkForDraw()) {
+              alert('Draw!');
+              gameEnded = true;
+            } else {
+              // Rotate between 'X' and 'O'
+              if (currentPlayer === 'X') {
+                currentPlayer = 'O';
+              } else {
+                currentPlayer = 'X';
+              }
+            }
+          }
+        });
+
+        // Function to check for winner
+        function checkForWinner() {
+          
+        }
+
+        // Function to check for draw
+        function checkForDraw() {
+          for (var i = 0; i < boxes.length; i++) {
+            if () {
+              return false;
+            }
+          }
+          return true;
         }
     </script>
 </body>
