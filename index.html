@@ -30,19 +30,25 @@
     <script>
         // Create variables
         var currentPlayer = 'X';
-        var boxes = document.querySelectorAll('td');
         var gameEnded = false;
 
+        
         // Add event listener to boxes
-        boxes.addEventListener('click', function(event) {
-          var clickedBox = event.target;
-          // Check if box is empty and game is not over
-          if (clickedBox.firstChild === null && !gameEnded) {
+        var boxes = document.querySelectorAll('td')
+
+        boxes.addEventListener('click', function() {
+            
+            var clickedBox = document.querySelector('clickedBox')
+            // Check if box is empty and game is not over
+            if (clickedBox.textContent === '' && !gameEnded) {
             // Set box to current player
+            clickedBox.textContent = currentPlayer;
+            // Display current player in clicked box
+            var currentPlayerDisplay = document.getElementById('currentPlayer');
+            currentPlayerDisplay.textContent = 'Current player: ' + currentPlayer;
             var box = document.createElement('td');
             var boxText = document.createTextNode(currentPlayer);
             box.appendChild(boxText);
-            clickedBox.parentNode.replaceChild(boxes, clickedBox);
             // Check for winner
             if (checkForWinner()) {
               alert('Player ' + currentPlayer + ' wins!');
@@ -61,6 +67,9 @@
           }
         });
 
+        var clickedBox = document.querySelector('clickedBox')
+            clickedBox.textContent = currentPlayer
+
         // Function to check for winner
         function checkForWinner() {
           
@@ -68,12 +77,7 @@
 
         // Function to check for draw
         function checkForDraw() {
-          for (var i = 0; i < boxes.length; i++) {
-            if () {
-              return false;
-            }
-          }
-          return true;
+
         }
     </script>
 </body>
