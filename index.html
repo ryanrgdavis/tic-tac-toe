@@ -58,9 +58,17 @@
                   }
                   message.appendChild(messageText);
                   gameEnded = true;
-                
-                  
-            }
+                } else {
+                    // Switch players
+                  currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+                  var messageText = document.createTextNode('Player ' + currentPlayer + '\'s turn');
+                  while (message.firstChild) {
+                    message.removeChild(message.firstChild);
+                  }
+                  message.appendChild(messageText);
+                }
+                }
+            });
         }
     </script>
 </body>
