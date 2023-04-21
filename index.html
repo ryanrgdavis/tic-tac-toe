@@ -36,20 +36,31 @@
         // add event listeners to boxes
         for (var i = 0; i < boxes.length; i++) {
             boxes[i].addEventListener('click', function() {
-                if (boxes[i].innerHTML === '' && !gameEnded) {
-                    boxes[i].innerHTML = currentPlayer;
-                    if (checkForWinner()) {
-                        message.innerHTML = 'Player' + currentPlayer + ' wins!';
-                        gameEnded = true;
-                    } else if (checkForDraw()) {
-                        message.innerHTML = 'Draw!';
-                        gameEnded = true;
-                    } else {
-                        // Switch players
-                        
-                    }
-                }
-            });
+            // Check if box is empty and game is not over
+            if (boxes[i].firstChild === null && !gameEnded) {
+              // Set box to current player
+              var box = document.createElement('td');
+              var boxText = document.createTextNode(currentPlayer);
+              box.appendChild(boxText);
+              boxes[i].parentNode.replaceChild(boxes, boxes[i]);
+              // Check for winner
+                if (checkForWinner()) {
+                  var messageText = document.createTextNode('Player ' + currentPlayer + ' wins!');
+                  while (message.firstChild) {
+                    message.removeChild(message.firstChild);
+                  }
+                  message.appendChild(messageText);
+                  gameEnded = true;
+                } else if (checkForDraw()) {
+                  var messageText = document.createTextNode('Draw!');
+                  while (message.firstChild) {
+                    message.removeChild(message.firstChild);
+                  }
+                  message.appendChild(messageText);
+                  gameEnded = true;
+                
+                  
+            }
         }
     </script>
 </body>
