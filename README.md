@@ -1,6 +1,6 @@
 # Tic-Tac-Toe
 The best game of all time is finally here and it's bigger and better than ever.
-## :computer: [Click here](https://example.com) to see my live project!
+## :computer: [Click here](https://ryanrgdavis.github.io/tic-tac-toe/) to see my live project!
 ## :page_facing_up: About
 - How to use my awesome project.
 - Download instructions (if relevant)
