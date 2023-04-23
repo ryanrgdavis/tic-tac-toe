@@ -32,52 +32,77 @@
         var currentPlayer = 'X';
         var gameEnded = false;
 
-        
-        // Add event listener to boxes
-        var boxes = document.querySelectorAll('td')
+        // Create a variable for each div element here
+        var box1 = document.querySelector('#box-0')
+        var box2 = document.querySelector('#box-1')
+        var box3 = document.querySelector('#box-2')
+        var box4 = document.querySelector('#box-3')
+        var box5 = document.querySelector('#box-4')
+        var box6 = document.querySelector('#box-5')
+        var box7 = document.querySelector('#box-6')
+        var box8 = document.querySelector('#box-7')
+        var box9 = document.querySelector('#box-8')
 
-        boxes.addEventListener('click', function() {
-            
-            var clickedBox = document.querySelector('clickedBox')
-            // Check if box is empty and game is not over
-            if (clickedBox.textContent === '' && !gameEnded) {
-            // Set box to current player
-            clickedBox.textContent = currentPlayer;
-            // Display current player in clicked box
-            var currentPlayerDisplay = document.getElementById('currentPlayer');
-            currentPlayerDisplay.textContent = 'Current player: ' + currentPlayer;
-            var box = document.createElement('td');
-            var boxText = document.createTextNode(currentPlayer);
-            box.appendChild(boxText);
-            // Check for winner
-            if (checkForWinner()) {
-              alert('Player ' + currentPlayer + ' wins!');
-              gameEnded = true;
-            } else if (checkForDraw()) {
-              alert('Draw!');
-              gameEnded = true;
-            } else {
-              // Rotate between 'X' and 'O'
-              if (currentPlayer === 'X') {
+        // Add event listener to boxes
+        var boxes = document.querySelector('table');
+        boxes.addEventListener('click', function(event) {
+            var clickedBox = event.target;
+            console.log(clickedBox);
+            if(currentPlayer === 'X'){
+                clickedBox.textContent = "X";
+                if (checkForWinner()) {
+                  alert('Player ' + currentPlayer + ' wins!');
+                  gameEnded = true;
+                  // } else if (checkForDraw()) {
+                  //   alert('Draw!');
+                  // gameEnded = true;
+                }
                 currentPlayer = 'O';
-              } else {
+            } else {
+              if(currentPlayer === 'O'){
+                clickedBox.textContent = "O";
+                if (checkForWinner()) {
+                  alert('Player ' + currentPlayer + ' wins!');
+                  gameEnded = true;
+                  //     } else if (checkForDraw()) {
+                  //       alert('Draw!');
+                  //       gameEnded = true;
+                }
                 currentPlayer = 'X';
               }
             }
-          }
-        });
-
-        var clickedBox = document.querySelector('clickedBox')
-            clickedBox.textContent = currentPlayer
+          });
 
         // Function to check for winner
         function checkForWinner() {
-          
+          if (box1.textContent === box2.textContent && box2.textContent === box3.textContent && box3.textContent !== '') {
+            alert('Player ' + currentPlayer + ' wins!');
+            gameEnded = true;
+          } else if (box4.textContent === box5.textContent && box5.textContent === box6.textContent && box6.textContent !== '') {
+            alert('Player ' + currentPlayer + ' wins!');
+            gameEnded = true;
+          } else if (box7.textContent === box8.textContent && box8.textContent === box9.textContent && box9.textContent !== '') {
+            alert('Player ' + currentPlayer + ' wins!');
+            gameEnded = true;
+          } else if (box1.textContent === box4.textContent && box4.textContent === box7.textContent && box7.textContent !== '') {
+            alert('Player ' + currentPlayer + ' wins!');
+            gameEnded = true;
+          } else if (box2.textContent === box5.textContent && box5.textContent === box8.textContent && box8.textContent !== '') {
+            alert('Player ' + currentPlayer + ' wins!');
+            gameEnded = true;
+          } else if (box3.textContent === box6.textContent && box6.textContent === box9.textContent && box9.textContent !== '') {
+            alert('Player ' + currentPlayer + ' wins!');
+            gameEnded = true;
+          } else if (box1.textContent === box5.textContent && box5.textContent === box9.textContent && box9.textContent !== '') {
+            alert('Player ' + currentPlayer + ' wins!');
+        } else if (box3.textContent === box5.textContent && box5.textContent === box7.textContent && box7.textContent !== '') {
+            alert('Player ' + currentPlayer + ' wins!');
         }
+      }
 
         // Function to check for draw
         function checkForDraw() {
-
+          
         }
     </script>
 </body>
