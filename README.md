@@ -26,4 +26,4 @@ What I would do differently is to focus on the 'Keep It Simple Stupid' rule sinc
 
 ## :white_check_mark: Future features
 - Display scores and display what round it is
-- Colour and animations
+- More colour and animations
