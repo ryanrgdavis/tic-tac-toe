@@ -1,3 +1,8 @@
+h1 {
+    text-align: center;
+    margin: 0 auto;
+}
+
 td {
     width: 100px;
     height: 100px;
@@ -15,10 +20,13 @@ td:hover {
 
 table {
     border-collapse: collapse;
+    margin: 0 auto;
 }
 
-#message {
-    font-size: 72px;
+#winner {
+    font-size: 60px;
+    text-align: center;
+    margin: 0 auto;
     animation: colorFade 5s infinite;
 }
 @keyframes colorFade {
