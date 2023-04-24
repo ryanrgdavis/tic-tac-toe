@@ -7,9 +7,7 @@ The best game of all time is finally here and it's bigger and better than ever.
 [![8oJNq.jpg](https://imgtr.ee/images/2023/04/24/8oJNq.jpg)](https://imgtr.ee/i/8oJNq)
 
 ## :pencil2: Planning & Problem Solving
-- Talk about approach to the problem.
-- Add screenshots/drawings of doodle/plans during the planning phase.
-- Flow charts of app logic.
+- Flow charts of app logic:
 ![Project](https://imgtr.ee/images/2023/04/24/8oafs.jpg)
 
 ## :rocket: Cool tech
@@ -27,4 +25,5 @@ The best game of all time is finally here and it's bigger and better than ever.
 What I would do differently is to focus on the 'Keep It Simple Stupid' rule since I always overcomplicating things.
 
 ## :white_check_mark: Future features
-- Display scores and what round it is
+- Display scores and display what round it is
+- Colour and animations
