@@ -49,54 +49,86 @@
         var boxes = document.querySelector('table');
         boxes.addEventListener('click', function(event) {
             var clickedBox = event.target;
-            console.log(clickedBox);
-            if(currentPlayer === 'X'){
-                clickedBox.textContent = "X";
-                if (checkForWinner()) {
-                  alert('Player ' + currentPlayer + ' wins!');
-                  gameEnded = true;
-                  } else if (checkForDraw()) {
+            console.log(clickedBox.textContent);
+            if(clickedBox.textContent === '') {
+              if(currentPlayer === 'X'){
+                  clickedBox.textContent = "X";
+                  if (checkForWinner()) {
+                    alert('Player ' + currentPlayer + ' wins!');
+                    gameEnded = true;
+                  }
+                  else if (checkForDraw()) {
                     alert('Draw!');
                     gameEnded = true;
+                  }
+                  currentPlayer = 'O';
+              } else {
+                if(currentPlayer === 'O'){
+                  clickedBox.textContent = "O";
+                  if (checkForWinner()) {
+                    alert('Player ' + currentPlayer + ' wins!');
+                    gameEnded = true;
+                  }
+                  else if (checkForDraw()) {
+                    alert('Draw!');
+                    gameEnded = true;
+                  }
+                  currentPlayer = 'X';
                 }
-                currentPlayer = 'O';
-            } else {
-              if(currentPlayer === 'O'){
-                clickedBox.textContent = "O";
-                if (checkForWinner()) {}
-                else if (checkForDraw()) {
-                  alert('Draw!');
-                  gameEnded = true;
-                }
-                currentPlayer = 'X';
               }
-            }
+            }  
           });
 
         // Function to check for winner
         function checkForWinner() {
           if (box1.textContent === box2.textContent && box2.textContent === box3.textContent && box3.textContent !== '') {
+            box1.style.backgroundColor = 'green';
+            box2.style.backgroundColor = 'green';
+            box3.style.backgroundColor = 'green';
             alert('Player ' + currentPlayer + ' wins!');
             gameEnded = true;
           } else if (box4.textContent === box5.textContent && box5.textContent === box6.textContent && box6.textContent !== '') {
+            box4.style.backgroundColor = 'green';
+            box5.style.backgroundColor = 'green';
+            box6.style.backgroundColor = 'green';
             alert('Player ' + currentPlayer + ' wins!');
             gameEnded = true;
           } else if (box7.textContent === box8.textContent && box8.textContent === box9.textContent && box9.textContent !== '') {
+            box7.style.backgroundColor = 'green';
+            box8.style.backgroundColor = 'green';
+            box9.style.backgroundColor = 'green';
             alert('Player ' + currentPlayer + ' wins!');
             gameEnded = true;
           } else if (box1.textContent === box4.textContent && box4.textContent === box7.textContent && box7.textContent !== '') {
+            box1.style.backgroundColor = 'green';
+            box4.style.backgroundColor = 'green';
+            box7.style.backgroundColor = 'green';
             alert('Player ' + currentPlayer + ' wins!');
             gameEnded = true;
           } else if (box2.textContent === box5.textContent && box5.textContent === box8.textContent && box8.textContent !== '') {
+            box2.style.backgroundColor = 'green';
+            box5.style.backgroundColor = 'green';
+            box8.style.backgroundColor = 'green';
             alert('Player ' + currentPlayer + ' wins!');
             gameEnded = true;
           } else if (box3.textContent === box6.textContent && box6.textContent === box9.textContent && box9.textContent !== '') {
+            box3.style.backgroundColor = 'green';
+            box6.style.backgroundColor = 'green';
+            box9.style.backgroundColor = 'green';
             alert('Player ' + currentPlayer + ' wins!');
             gameEnded = true;
           } else if (box1.textContent === box5.textContent && box5.textContent === box9.textContent && box9.textContent !== '') {
+            box1.style.backgroundColor = 'green';
+            box5.style.backgroundColor = 'green';
+            box9.style.backgroundColor = 'green';
             alert('Player ' + currentPlayer + ' wins!');
+            gameEnded = true;
           } else if (box3.textContent === box5.textContent && box5.textContent === box7.textContent && box7.textContent !== '') {
+            box3.style.backgroundColor = 'green';
+            box5.style.backgroundColor = 'green';
+            box7.style.backgroundColor = 'green';
             alert('Player ' + currentPlayer + ' wins!');
+            gameEnded = true;
           }
         }
 
