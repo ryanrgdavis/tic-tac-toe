@@ -17,6 +17,24 @@ table {
     border-collapse: collapse;
 }
 
-#winner {
-    font-size: 24px;
+#message {
+    font-size: 72px;
+    animation: colorFade 5s infinite;
+}
+@keyframes colorFade {
+    0% {
+        color: bisque
+    }
+    20% {
+        color: crimson
+    }
+    50% {
+        color: darkgreen
+    }
+    70% {
+        color: blue
+    }
+    90% {
+        color:magenta
+    }
 }
