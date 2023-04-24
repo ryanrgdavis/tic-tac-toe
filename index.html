@@ -26,7 +26,7 @@
         <td id="box-8"></td>
       </tr>
     </table>
-    <div id="message"></div>
+    <div id="winner"></div>
     <script>
         // Create variables
         var currentPlayer = 'X';
@@ -54,11 +54,11 @@
               if(currentPlayer === 'X'){
                   clickedBox.textContent = "X";
                   if (checkForWinner()) {
-                    message.textContent = 'Player ' + currentPlayer + ' wins!'
+                    winner.textContent = 'Player ' + currentPlayer + ' wins!'
                     gameEnded = true;
                   }
                   else if (checkForDraw()) {
-
+                    winner.textContent = 'Draw!';
                     gameEnded = true;
                   }
                   currentPlayer = 'O';
@@ -66,11 +66,11 @@
                 if(currentPlayer === 'O'){
                   clickedBox.textContent = "O";
                   if (checkForWinner()) {
-                    message.textContent = 'Player ' + currentPlayer + ' wins!'
+                    winner.textContent = 'Player ' + currentPlayer + ' wins!'
                     gameEnded = true;
                   }
                   else if (checkForDraw()) {
-                    message.textContent = 'Draw!';
+                    winner.textContent = 'Draw!';
                     gameEnded = true;
                   }
                   currentPlayer = 'X';
@@ -85,49 +85,49 @@
             box1.style.backgroundColor = 'green';
             box2.style.backgroundColor = 'green';
             box3.style.backgroundColor = 'green';
-            message.textContent = 'Player ' + currentPlayer + ' wins!'
+            winner.textContent = 'Player ' + currentPlayer + ' wins!'
             gameEnded = true;
           } else if (box4.textContent === box5.textContent && box5.textContent === box6.textContent && box6.textContent !== '') {
             box4.style.backgroundColor = 'green';
             box5.style.backgroundColor = 'green';
             box6.style.backgroundColor = 'green';
-            message.textContent = 'Player ' + currentPlayer + ' wins!'
+            winner.textContent = 'Player ' + currentPlayer + ' wins!'
             gameEnded = true;
           } else if (box7.textContent === box8.textContent && box8.textContent === box9.textContent && box9.textContent !== '') {
             box7.style.backgroundColor = 'green';
             box8.style.backgroundColor = 'green';
             box9.style.backgroundColor = 'green';
-            message.textContent = 'Player ' + currentPlayer + ' wins!'
+            winner.textContent = 'Player ' + currentPlayer + ' wins!'
             gameEnded = true;
           } else if (box1.textContent === box4.textContent && box4.textContent === box7.textContent && box7.textContent !== '') {
             box1.style.backgroundColor = 'green';
             box4.style.backgroundColor = 'green';
             box7.style.backgroundColor = 'green';
-            message.textContent = 'Player ' + currentPlayer + ' wins!'
+            winner.textContent = 'Player ' + currentPlayer + ' wins!'
             gameEnded = true;
           } else if (box2.textContent === box5.textContent && box5.textContent === box8.textContent && box8.textContent !== '') {
             box2.style.backgroundColor = 'green';
             box5.style.backgroundColor = 'green';
             box8.style.backgroundColor = 'green';
-            message.textContent = 'Player ' + currentPlayer + ' wins!'
+            winner.textContent = 'Player ' + currentPlayer + ' wins!'
             gameEnded = true;
           } else if (box3.textContent === box6.textContent && box6.textContent === box9.textContent && box9.textContent !== '') {
             box3.style.backgroundColor = 'green';
             box6.style.backgroundColor = 'green';
             box9.style.backgroundColor = 'green';
-            message.textContent = 'Player ' + currentPlayer + ' wins!'
+            winner.textContent = 'Player ' + currentPlayer + ' wins!'
             gameEnded = true;
           } else if (box1.textContent === box5.textContent && box5.textContent === box9.textContent && box9.textContent !== '') {
             box1.style.backgroundColor = 'green';
             box5.style.backgroundColor = 'green';
             box9.style.backgroundColor = 'green';
-            message.textContent = 'Player ' + currentPlayer + ' wins!'
+            winner.textContent = 'Player ' + currentPlayer + ' wins!'
             gameEnded = true;
           } else if (box3.textContent === box5.textContent && box5.textContent === box7.textContent && box7.textContent !== '') {
             box3.style.backgroundColor = 'green';
             box5.style.backgroundColor = 'green';
             box7.style.backgroundColor = 'green';
-            message.textContent = 'Player ' + currentPlayer + ' wins!'
+            winner.textContent = 'Player ' + currentPlayer + ' wins!'
             gameEnded = true;
           }
         }
@@ -140,7 +140,7 @@
             }
           }
           if(emptyBoxes === 9 && !gameEnded) {
-            message.textContent = 'Draw!';
+            winner.textContent = 'Draw!';
             gameEnded = true;
           }
         }
